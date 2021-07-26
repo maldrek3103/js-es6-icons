@@ -8,9 +8,12 @@
 // console.log(icons);
 
 
+const cardSelection = document.querySelector('#icons .row');
+
+let iconsTemplate = '';
 
 //make template for icons
-const iconsTemplate = `
+iconsTemplate = `
 <div class="col col-md-2">
     <div class="card">
         <div class="card-body">
@@ -20,3 +23,5 @@ const iconsTemplate = `
     </div>
 </div>
 `;
+
+cardSelection.innerHTML = iconsTemplate;
