@@ -1,0 +1,11 @@
+#bottomnav{
+    height: 56px;
+}
+.form-select {
+    height: 40px;
+    width: 100px;
+}
+
+main{
+    height: calc(100vh - 112px);
+}
