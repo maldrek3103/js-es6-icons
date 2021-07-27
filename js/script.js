@@ -10,22 +10,30 @@
 //HTML selector
 const cardSection = document.querySelector('#icons .row');
 
-const renderIcons = (icons, targetElement) => {
-    //Icons template + forEach loop
+const renderIcons = (array, targetElement) => {
+
+    //Initialize icons template + forEach loop
     let iconsTemplate = '';
-    icons.forEach((icon) => {
-        //make template for icons
+    array.forEach((icon, i) => {
+
+        //Gestione dell'offset in pagina
+        let offSet = '';
+        if (i % 5 == 0) {
+            offSet = 'offset-md-1';
+        }
+
+        //template
         iconsTemplate += `
-    <div class="col col-md-2">
-        <div class="card">
-            <div class="card-body">
-                <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.prefix}2x"></i>
-                <h6>${icon.name.toUpperCase()}</h6>
+        <div class="col col-md-2 ${offSet}">
+            <div class="card">
+                <div class="card-body">
+                    <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.prefix}2x"></i>
+                    <h6>${icon.name.toUpperCase()}</h6>
+                </div>
             </div>
         </div>
-    </div>
-    `;
-    })
+        `;
+    });
 
     //Print on page
     targetElement.innerHTML = iconsTemplate;
