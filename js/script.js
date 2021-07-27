@@ -11,17 +11,18 @@
 const cardSelection = document.querySelector('#icons .row');
 
 let iconsTemplate = '';
-icons.forEach((item) => {
+icons.forEach((icon) => {
     //make template for icons
-    iconsTemplate = `
+    iconsTemplate += `
     <div class="col col-md-2">
         <div class="card">
             <div class="card-body">
-                <i class="${item.family} ${item.prefix}${item.name} ${item.prefix}2x"></i>
-                <h6>${item.name.toUpperCase()}</h6>
+                <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.prefix}2x"></i>
+                <h6>${icon.name.toUpperCase()}</h6>
             </div>
         </div>
     </div>
     `;
 })
+
 cardSelection.innerHTML = iconsTemplate;
