@@ -7,9 +7,10 @@
 //     },
 // console.log(icons);
 
-
+//HTML selector
 const cardSelection = document.querySelector('#icons .row');
 
+//Icons template + forEach loop
 let iconsTemplate = '';
 icons.forEach((icon) => {
     //make template for icons
@@ -25,4 +26,23 @@ icons.forEach((icon) => {
     `;
 })
 
+//Print on page
 cardSelection.innerHTML = iconsTemplate;
+
+
+//Filters
+let animals = icons.filter(function (icon) {
+    return icon.type == "animal";
+});
+
+let vegetables = icons.filter(function (icon) {
+    return icon.type == "vegetable";
+});
+
+let users = icons.filter(function (icon) {
+    return icon.type == "user";
+});
+
+let companies = icons.filter(function (icon) {
+    return icon.type == "company";
+});
