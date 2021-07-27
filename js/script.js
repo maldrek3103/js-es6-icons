@@ -8,13 +8,14 @@
 // console.log(icons);
 
 //HTML selector
-const cardSelection = document.querySelector('#icons .row');
+const cardSection = document.querySelector('#icons .row');
 
-//Icons template + forEach loop
-let iconsTemplate = '';
-icons.forEach((icon) => {
-    //make template for icons
-    iconsTemplate += `
+const renderIcons = (icons, targetElement) => {
+    //Icons template + forEach loop
+    let iconsTemplate = '';
+    icons.forEach((icon) => {
+        //make template for icons
+        iconsTemplate += `
     <div class="col col-md-2">
         <div class="card">
             <div class="card-body">
@@ -24,11 +25,14 @@ icons.forEach((icon) => {
         </div>
     </div>
     `;
-})
+    })
+
+    //Print on page
+    targetElement.innerHTML = iconsTemplate;
+};
 
 //Print on page
-cardSelection.innerHTML = iconsTemplate;
-
+renderIcons(icons, cardSection)
 
 //Filters
 let animals = icons.filter(function (icon) {
