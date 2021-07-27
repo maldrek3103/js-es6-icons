@@ -43,4 +43,7 @@ typeFilter.addEventListener('change', () => {
         renderIcons(icons, cardSection);
         return;
     }
-})
+
+    const filteredIcons = icons.filter((icon) => filteredValue === icon.type);
+    renderIcons(filteredIcons, cardSection);
+});
