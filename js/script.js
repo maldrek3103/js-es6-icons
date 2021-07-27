@@ -1,12 +1,3 @@
-// const icons = [
-//     {
-//       name: 'cat',
-//       prefix: 'fa-',
-//       type: 'animal',
-//       family: 'fas',
-//     },
-// console.log(icons);
-
 //HTML selector
 const cardSection = document.querySelector('#icons .row');
 
@@ -27,7 +18,7 @@ const renderIcons = (array, targetElement) => {
         <div class="col col-md-2 ${offSet}">
             <div class="card">
                 <div class="card-body">
-                    <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.prefix}2x"></i>
+                    <i class="${icon.family} ${icon.prefix}${icon.name} ${icon.prefix}2x ${icon.type}"></i>
                     <h6>${icon.name.toUpperCase()}</h6>
                 </div>
             </div>
@@ -40,21 +31,16 @@ const renderIcons = (array, targetElement) => {
 };
 
 //Print on page
-renderIcons(icons, cardSection)
+renderIcons(icons, cardSection);
 
 //Filters
-let animals = icons.filter(function (icon) {
-    return icon.type == "animal";
-});
+const typeFilter = document.getElementById('typeFilter');
 
-let vegetables = icons.filter(function (icon) {
-    return icon.type == "vegetable";
-});
+typeFilter.addEventListener('change', () => {
+    const filteredValue = typeFilter.value;
 
-let users = icons.filter(function (icon) {
-    return icon.type == "user";
-});
-
-let companies = icons.filter(function (icon) {
-    return icon.type == "company";
-});
+    if (filteredValue === 'all') {
+        renderIcons(icons, cardSection);
+        return;
+    }
+})

@@ -2,10 +2,23 @@
     height: 56px;
 }
 .form-select {
-    height: 40px;
-    width: 100px;
+    height: 56px;
+    width: 200px;
 }
 
 main{
    min-height: calc(100vh - 112px);
+}
+
+.animal{
+    color: blue;
+}
+.vegetable{
+    color: gold;
+}
+.user{
+    color: green;
+}
+.company{
+    color: red;
 }
